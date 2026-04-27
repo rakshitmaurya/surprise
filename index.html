@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 3 Month Anniversary! 💕</title>
+<link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #FF6B9D;
+    --blue: #4FC3F7;
+    --yellow: #FFD54F;
+    --red: #FF5252;
+    --purple: #CE93D8;
+    --green: #81C784;
+    --white: #FFFDE7;
+    --dark: #3E2723;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--white);
+    overflow-x: hidden;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E❤️%3C/text%3E%3C/svg%3E"), auto;
+  }
+
+  /* ========= SKY BACKGROUND ========= */
+  #sky {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(180deg, #b3e5fc 0%, #e1f5fe 50%, #fff9c4 100%);
+    z-index: -3;
+  }
+
+  /* ========= FLOATING CLOUDS ========= */
+  .cloud {
+    position: fixed;
+    background: white;
+    border-radius: 50px;
+    opacity: 0.85;
+    z-index: -2;
+    animation: floatCloud linear infinite;
+  }
+  .cloud::before, .cloud::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+  }
+  .cloud::before { width: 60%; height: 140%; top: -60%; left: 10%; }
+  .cloud::after  { width: 40%; height: 120%; top: -45%; right: 10%; }
+
+  @keyframes floatCloud {
+    from { transform: translateX(-250px); }
+    to   { transform: translateX(110vw); }
+  }
+
+  /* ========= FLOATING HEARTS ========= */
+  .heart-bg {
+    position: fixed;
+    font-size: 1.5rem;
+    animation: riseHeart linear infinite;
+    z-index: -1;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  @keyframes riseHeart {
+    0%   { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+    20%  { opacity: 0.4; }
+    80%  { opacity: 0.4; }
+    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+  }
+
+  /* ========= MAIN WRAPPER ========= */
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 6rem;
+  }
+
+  /* ========= HERO SECTION ========= */
+  .hero {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+    position: relative;
+  }
+
+  .hero-title {
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: clamp(2.4rem, 7vw, 4.5rem);
+    color: var(--pink);
+    text-shadow: 4px 4px 0 #fff, 6px 6px 0 var(--red);
+    animation: titleBounce 1s ease-out;
+    line-height: 1.15;
+  }
+  @keyframes titleBounce {
+    0%   { transform: scale(0) rotate(-5deg); opacity: 0; }
+    70%  { transform: scale(1.08) rotate(2deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); }
+  }
+
+  .hero-sub {
+    font-size: 1.35rem;
+    color: var(--dark);
+    margin-top: 0.6rem;
+    animation: fadeUp 1s 0.4s both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ========= SECTION CARD ========= */
+  .card {
+    background: white;
+    border-radius: 30px;
+    border: 4px solid var(--dark);
+    box-shadow: 8px 8px 0 var(--dark);
+    padding: 2rem 2rem 2.5rem;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 0.8s both;
+  }
+
+  .card-title {
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* ========= MICKEY MOUSE CHARACTER ========= */
+  .mickey-section { border-color: #222; background: #fff9e6; }
+  .mickey-section .card-title { color: #222; }
+
+  .mickey-wrap {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .mickey {
+    flex-shrink: 0;
+    animation: wobble 2s ease-in-out infinite;
+  }
+  @keyframes wobble {
+    0%, 100% { transform: rotate(-3deg); }
+    50%       { transform: rotate(3deg); }
+  }
+
+  .mickey svg { display: block; }
+
+  .mickey-text {
+    flex: 1;
+    min-width: 180px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--dark);
+  }
+
+  /* ========= PEPPA PIG CHARACTER ========= */
+  .peppa-section { border-color: var(--pink); background: #fff0f5; }
+  .peppa-section .card-title { color: var(--pink); }
+
+  .peppa-wrap {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap-reverse;
+  }
+
+  .peppa {
+    flex-shrink: 0;
+    animation: jump 1.5s ease-in-out infinite;
+  }
+  @keyframes jump {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-12px); }
+  }
+
+  /* ========= DORAEMON CHARACTER ========= */
+  .dora-section { border-color: var(--blue); background: #e8f7ff; }
+  .dora-section .card-title { color: #1565C0; }
+
+  .dora-wrap {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .doraemon {
+    flex-shrink: 0;
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.05); }
+  }
+
+  /* ========= MEMORY TIMELINE ========= */
+  .timeline-section { background: #f3e5f5; border-color: var(--purple); }
+  .timeline-section .card-title { color: #6A1B9A; }
+
+  .timeline {
+    position: relative;
+    padding-left: 2.5rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.6rem;
+    top: 0; bottom: 0;
+    width: 4px;
+    background: repeating-linear-gradient(
+      to bottom,
+      var(--purple) 0, var(--purple) 12px,
+      transparent 12px, transparent 20px
+    );
+    border-radius: 4px;
+  }
+
+  .t-item {
+    position: relative;
+    margin-bottom: 1.4rem;
+    animation: fadeUp 0.6s both;
+  }
+  .t-item::before {
+    content: attr(data-emoji);
+    position: absolute;
+    left: -2.5rem;
+    top: 0;
+    font-size: 1.4rem;
+    background: white;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--purple);
+  }
+  .t-item strong {
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 1rem;
+    color: var(--purple);
+    display: block;
+  }
+  .t-item p { font-size: 0.95rem; color: var(--dark); }
+
+  /* ========= REASONS I LOVE YOU ========= */
+  .reasons-section { background: #fff8e1; border-color: var(--yellow); }
+  .reasons-section .card-title { color: #E65100; }
+
+  .reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .reason-bubble {
+    background: white;
+    border: 3px solid var(--yellow);
+    border-radius: 20px;
+    box-shadow: 4px 4px 0 var(--yellow);
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+    transition: transform 0.2s;
+    cursor: default;
+  }
+  .reason-bubble:hover { transform: scale(1.05) rotate(-1deg); }
+  .reason-bubble .icon { font-size: 2rem; display: block; margin-bottom: 0.4rem; }
+
+  /* ========= WISH BALLOON ========= */
+  .wish-section { background: #e8f5e9; border-color: var(--green); text-align: center; }
+  .wish-section .card-title { color: #2E7D32; justify-content: center; }
+
+  .balloon-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin: 1.5rem 0;
+  }
+
+  .balloon {
+    animation: floatBalloon 2s ease-in-out infinite;
+    cursor: pointer;
+  }
+  .balloon:nth-child(2) { animation-delay: 0.3s; }
+  .balloon:nth-child(3) { animation-delay: 0.6s; }
+  .balloon:nth-child(4) { animation-delay: 0.9s; }
+  @keyframes floatBalloon {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50%       { transform: translateY(-14px) rotate(3deg); }
+  }
+
+  .wish-text {
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 1.3rem;
+    color: #2E7D32;
+    line-height: 1.7;
+  }
+
+  /* ========= FOOTER ========= */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 1.3rem;
+    color: var(--pink);
+    text-shadow: 2px 2px 0 white;
+  }
+
+  /* ========= CONFETTI BURST ========= */
+  .confetti-piece {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    top: -20px;
+    animation: confettiFall linear forwards;
+    pointer-events: none;
+    z-index: 999;
+  }
+  @keyframes confettiFall {
+    0%   { transform: translateY(0) rotateZ(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotateZ(720deg); opacity: 0; }
+  }
+
+  /* ========= SPARKLE BUTTON ========= */
+  .sparkle-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 2rem;
+    background: var(--pink);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 1.2rem;
+    box-shadow: 4px 4px 0 var(--dark);
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .sparkle-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--dark);
+  }
+  .sparkle-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--dark);
+  }
+
+  /* stagger card animations */
+  .card:nth-child(1) { animation-delay: 0.1s; }
+  .card:nth-child(2) { animation-delay: 0.3s; }
+  .card:nth-child(3) { animation-delay: 0.5s; }
+  .card:nth-child(4) { animation-delay: 0.7s; }
+  .card:nth-child(5) { animation-delay: 0.9s; }
+
+  @media (max-width: 540px) {
+    .mickey-wrap, .peppa-wrap, .dora-wrap { justify-content: center; }
+    .mickey, .peppa, .doraemon { margin: 0 auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Sky -->
+<div id="sky"></div>
+
+<!-- Hero -->
+<main>
+  <section class="hero">
+    <h1 class="hero-title">🎉 Happy 3 Months! 🎉</h1>
+    <p class="hero-sub">Three months of magic, laughter & love ✨</p>
+  </section>
+
+  <!-- ===== MICKEY MOUSE CARD ===== -->
+  <div class="card mickey-section">
+    <h2 class="card-title">🐭 From Mickey with Love</h2>
+    <div class="mickey-wrap">
+      <div class="mickey">
+        <!-- Mickey Mouse SVG -->
+        <svg width="140" height="160" viewBox="0 0 140 160" xmlns="http://www.w3.org/2000/svg">
+          <!-- Ears -->
+          <circle cx="30" cy="38" r="28" fill="#111"/>
+          <circle cx="110" cy="38" r="28" fill="#111"/>
+          <!-- Head -->
+          <circle cx="70" cy="75" r="50" fill="#111"/>
+          <!-- Face -->
+          <circle cx="70" cy="78" r="42" fill="#e8c09a"/>
+          <!-- Eyes -->
+          <ellipse cx="55" cy="65" rx="9" ry="10" fill="white"/>
+          <ellipse cx="85" cy="65" rx="9" ry="10" fill="white"/>
+          <circle cx="57" cy="67" r="5" fill="#111"/>
+          <circle cx="87" cy="67" r="5" fill="#111"/>
+          <circle cx="59" cy="65" r="2" fill="white"/>
+          <circle cx="89" cy="65" r="2" fill="white"/>
+          <!-- Nose -->
+          <ellipse cx="70" cy="80" rx="8" ry="6" fill="#111"/>
+          <!-- Smile -->
+          <path d="M52 88 Q70 104 88 88" stroke="#111" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- Cheeks -->
+          <circle cx="45" cy="83" r="9" fill="#FF9090" opacity="0.5"/>
+          <circle cx="95" cy="83" r="9" fill="#FF9090" opacity="0.5"/>
+          <!-- Bow (cute touch) -->
+          <path d="M58 118 Q70 128 82 118 Q90 140 70 140 Q50 140 58 118Z" fill="#FF5252"/>
+          <circle cx="70" cy="128" r="5" fill="#FF8A80"/>
+          <!-- Gloves hint -->
+          <circle cx="20" cy="140" r="14" fill="white" stroke="#aaa" stroke-width="2"/>
+          <circle cx="120" cy="140" r="14" fill="white" stroke="#aaa" stroke-width="2"/>
+        </svg>
+      </div>
+      <p class="mickey-text">
+        Even Mickey knows - some things are worth celebrating with the biggest smile! 🎈<br><br>
+        <strong>3 months</strong> of holding hands, making memories, and laughing together.<br><br>
+        Oh boy, oh boy you're one in a million! 🐭❤️
+      </p>
+    </div>
+  </div>
+
+  <!-- ===== PEPPA PIG CARD ===== -->
+  <div class="card peppa-section">
+    <h2 class="card-title">🐷 Peppa Says...</h2>
+    <div class="peppa-wrap">
+      <p class="mickey-text" style="color:#333; font-size:1.1rem; line-height:1.7;">
+        I'm <strong>Peppa Pig</strong>! Oink oink! 🐷<br><br>
+        Even Daddy Pig says: <em>"When you find someone who makes you happy every single day - that's someone really special!"</em><br><br>
+        Jump in muddy puddles together, laugh at silly things, and never stop having adventures! 🌈
+      </p>
+      <div class="peppa">
+        <!-- Peppa Pig SVG -->
+        <svg width="130" height="180" viewBox="0 0 130 180" xmlns="http://www.w3.org/2000/svg">
+          <!-- Body -->
+          <ellipse cx="65" cy="130" rx="38" ry="42" fill="#F48FB1"/>
+          <!-- Dress -->
+          <ellipse cx="65" cy="148" rx="42" ry="30" fill="#EF5350"/>
+          <!-- Head -->
+          <ellipse cx="65" cy="60" rx="38" ry="36" fill="#F48FB1"/>
+          <!-- Snout -->
+          <ellipse cx="80" cy="65" rx="20" ry="16" fill="#F06292"/>
+          <!-- Nostrils -->
+          <circle cx="74" cy="64" r="4" fill="#C2185B"/>
+          <circle cx="86" cy="64" r="4" fill="#C2185B"/>
+          <!-- Eyes -->
+          <circle cx="54" cy="50" r="7" fill="white"/>
+          <circle cx="73" cy="50" r="7" fill="white"/>
+          <circle cx="56" cy="51" r="4" fill="#111"/>
+          <circle cx="75" cy="51" r="4" fill="#111"/>
+          <circle cx="57" cy="50" r="1.5" fill="white"/>
+          <circle cx="76" cy="50" r="1.5" fill="white"/>
+          <!-- Ears -->
+          <ellipse cx="32" cy="32" rx="13" ry="16" fill="#F48FB1" transform="rotate(-15,32,32)"/>
+          <ellipse cx="98" cy="32" rx="13" ry="16" fill="#F48FB1" transform="rotate(15,98,32)"/>
+          <ellipse cx="32" cy="32" rx="7" ry="10" fill="#F06292" transform="rotate(-15,32,32)"/>
+          <ellipse cx="98" cy="32" rx="7" ry="10" fill="#F06292" transform="rotate(15,98,32)"/>
+          <!-- Smile -->
+          <path d="M60 72 Q73 82 86 72" stroke="#C2185B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- Arms -->
+          <ellipse cx="22" cy="118" rx="10" ry="24" fill="#F48FB1" transform="rotate(20,22,118)"/>
+          <ellipse cx="108" cy="118" rx="10" ry="24" fill="#F48FB1" transform="rotate(-20,108,118)"/>
+          <!-- Legs -->
+          <rect x="43" y="165" width="16" height="22" rx="8" fill="#F48FB1"/>
+          <rect x="72" y="165" width="16" height="22" rx="8" fill="#F48FB1"/>
+          <!-- Shoes -->
+          <ellipse cx="51" cy="188" rx="13" ry="7" fill="#212121"/>
+          <ellipse cx="80" cy="188" rx="13" ry="7" fill="#212121"/>
+          <!-- Cheeks -->
+          <circle cx="40" cy="62" r="8" fill="#F06292" opacity="0.4"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== DORAEMON CARD ===== -->
+  <div class="card dora-section">
+    <h2 class="card-title">🔔 Doraemon's Pocket of Love</h2>
+    <div class="dora-wrap">
+      <div class="doraemon">
+        <!-- Doraemon SVG -->
+        <svg width="150" height="190" viewBox="0 0 150 190" xmlns="http://www.w3.org/2000/svg">
+          <!-- Body -->
+          <ellipse cx="75" cy="145" rx="48" ry="42" fill="#29B6F6"/>
+          <!-- Tummy -->
+          <ellipse cx="75" cy="152" rx="34" ry="30" fill="white"/>
+          <!-- Pocket -->
+          <path d="M52 150 Q75 138 98 150 Q98 175 75 175 Q52 175 52 150Z" fill="none" stroke="#aaa" stroke-width="2"/>
+          <!-- Head -->
+          <circle cx="75" cy="68" r="55" fill="#29B6F6"/>
+          <!-- Face white -->
+          <ellipse cx="75" cy="75" rx="42" ry="38" fill="white"/>
+          <!-- Eyes -->
+          <circle cx="57" cy="56" r="13" fill="white"/>
+          <circle cx="93" cy="56" r="13" fill="white"/>
+          <circle cx="59" cy="58" r="8" fill="#111"/>
+          <circle cx="95" cy="58" r="8" fill="#111"/>
+          <circle cx="61" cy="55" r="3" fill="white"/>
+          <circle cx="97" cy="55" r="3" fill="white"/>
+          <!-- Nose -->
+          <circle cx="75" cy="72" r="8" fill="#EF5350"/>
+          <!-- Whiskers -->
+          <line x1="15" y1="80" x2="62" y2="82" stroke="#555" stroke-width="2" stroke-linecap="round"/>
+          <line x1="15" y1="90" x2="62" y2="88" stroke="#555" stroke-width="2" stroke-linecap="round"/>
+          <line x1="88" y1="82" x2="135" y2="80" stroke="#555" stroke-width="2" stroke-linecap="round"/>
+          <line x1="88" y1="88" x2="135" y2="90" stroke="#555" stroke-width="2" stroke-linecap="round"/>
+          <!-- Mouth -->
+          <path d="M55 95 Q75 112 95 95" stroke="#555" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- Tongue -->
+          <ellipse cx="75" cy="108" rx="12" ry="7" fill="#EF9A9A"/>
+          <!-- Collar -->
+          <rect x="38" y="116" width="74" height="10" rx="5" fill="#EF5350"/>
+          <circle cx="75" cy="121" r="7" fill="#FFD700"/>
+          <!-- Arms -->
+          <ellipse cx="20" cy="148" rx="14" ry="10" fill="#29B6F6" transform="rotate(-30,20,148)"/>
+          <ellipse cx="130" cy="148" rx="14" ry="10" fill="#29B6F6" transform="rotate(30,130,148)"/>
+          <!-- Hands -->
+          <circle cx="14" cy="160" r="10" fill="white"/>
+          <circle cx="136" cy="160" r="10" fill="white"/>
+          <!-- Feet -->
+          <ellipse cx="55" cy="188" rx="22" ry="10" fill="white"/>
+          <ellipse cx="95" cy="188" rx="22" ry="10" fill="white"/>
+        </svg>
+      </div>
+      <p class="mickey-text" style="color:#1565C0;">
+        Doraemon reached into his magical pocket and pulled out the greatest gadget of all - <strong>a heart full of love!</strong> 💙<br><br>
+        No gadget in the world can replace the feeling of being with you. You are my bamboocopter - always lifting me up when I am felling down. 🚁<br><br>
+        <em>どこでもドア</em> (Dokodemo Door) - no matter where life takes you, I'll always open the door for you. 🚪✨
+      </p>
+    </div>
+  </div>
+
+  <!-- ===== TIMELINE CARD ===== -->
+  <div class="card timeline-section">
+    <h2 class="card-title">🌟 Our Story So Far</h2>
+    <div class="timeline">
+      <div class="t-item" data-emoji="🌸" style="animation-delay:0.1s">
+        <strong>Month 1 - The Beginning</strong>
+        <p>Me being the most shy person you may have ever met 🙃.</p>
+      </div>
+      <div class="t-item" data-emoji="🌻" style="animation-delay:0.3s">
+        <strong>Month 2 - Growing Together</strong>
+        <p>Long and late night talks and shared laughs. Learning each other's little quirks and loving them.</p>
+      </div>
+      <div class="t-item" data-emoji="🌈" style="animation-delay:0.5s">
+        <strong>Month 3 - Right Here, Right Now</strong>
+        <p>Three months of being your favourite person and having you as mine. And this is just the beginning! 💕</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== REASONS CARD ===== -->
+  <div class="card reasons-section">
+    <h2 class="card-title">💛 Reasons I Adore You</h2>
+    <div class="reasons-grid">
+      <div class="reason-bubble"><span class="icon">😂</span>You make me laugh like no one else can</div>
+      <div class="reason-bubble"><span class="icon">🤗</span>Your positivity </div>
+      <div class="reason-bubble"><span class="icon">✨</span>You make ordinary days sparkle</div>
+      <div class="reason-bubble"><span class="icon">🫶</span>You always being there for me</div>
+      <div class="reason-bubble"><span class="icon">🎨</span>You see beauty in everything</div>
+      <div class="reason-bubble"><span class="icon">🌙</span>You're my favourite goodnight text</div>
+    </div>
+  </div>
+
+  <!-- ===== BALLOON WISH CARD ===== -->
+  <div class="card wish-section">
+    <h2 class="card-title">🎈 A Little Wish For You</h2>
+    <div class="balloon-row">
+      <!-- Pink balloon -->
+      <div class="balloon">
+        <svg width="60" height="100" viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="30" cy="35" rx="25" ry="32" fill="#FF6B9D"/>
+          <ellipse cx="22" cy="24" rx="8" ry="6" fill="#FF9BBD" opacity="0.6"/>
+          <path d="M30 67 Q32 75 28 83 Q33 88 29 95" stroke="#888" stroke-width="1.5" fill="none"/>
+          <polygon points="27,67 33,67 30,74" fill="#FF6B9D"/>
+        </svg>
+      </div>
+      <!-- Blue balloon -->
+      <div class="balloon">
+        <svg width="60" height="100" viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="30" cy="35" rx="25" ry="32" fill="#4FC3F7"/>
+          <ellipse cx="22" cy="24" rx="8" ry="6" fill="#80D8FF" opacity="0.6"/>
+          <path d="M30 67 Q28 75 32 83 Q27 88 31 95" stroke="#888" stroke-width="1.5" fill="none"/>
+          <polygon points="27,67 33,67 30,74" fill="#4FC3F7"/>
+        </svg>
+      </div>
+      <!-- Yellow balloon -->
+      <div class="balloon">
+        <svg width="60" height="100" viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="30" cy="35" rx="25" ry="32" fill="#FFD54F"/>
+          <ellipse cx="22" cy="24" rx="8" ry="6" fill="#FFE082" opacity="0.6"/>
+          <path d="M30 67 Q33 76 27 84 Q32 89 28 95" stroke="#888" stroke-width="1.5" fill="none"/>
+          <polygon points="27,67 33,67 30,74" fill="#FFD54F"/>
+        </svg>
+      </div>
+      <!-- Purple balloon -->
+      <div class="balloon">
+        <svg width="60" height="100" viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="30" cy="35" rx="25" ry="32" fill="#CE93D8"/>
+          <ellipse cx="22" cy="24" rx="8" ry="6" fill="#E1BEE7" opacity="0.6"/>
+          <path d="M30 67 Q27 75 31 83 Q26 88 30 95" stroke="#888" stroke-width="1.5" fill="none"/>
+          <polygon points="27,67 33,67 30,74" fill="#CE93D8"/>
+        </svg>
+      </div>
+    </div>
+
+    <p class="wish-text">
+      Here's to 3 months of smiles, silly moments,<br>
+      and a whole lot of love 💕<br><br>
+      May every day with you be as colourful<br>
+      as a cartoon sky! 🌈
+    </p>
+    <br>
+    <button class="sparkle-btn" onclick="launchConfetti()">🎊 Celebrate with me!</button>
+  </div>
+
+</main>
+
+<footer>
+  Made with 💖 just for you — Happy 3 Months, Vritti!
+  (def not rakshit 🙏)
+</footer>
+
+<script>
+  // ===== GENERATE CLOUDS =====
+  const sky = document.getElementById('sky');
+  for (let i = 0; i < 5; i++) {
+    const c = document.createElement('div');
+    c.className = 'cloud';
+    const w = 80 + Math.random() * 100;
+    c.style.cssText = `
+      width:${w}px; height:${w * 0.4}px;
+      top:${5 + Math.random() * 30}%;
+      animation-duration:${20 + Math.random() * 25}s;
+      animation-delay:-${Math.random() * 25}s;
+      opacity:${0.7 + Math.random() * 0.3};
+    `;
+    document.body.appendChild(c);
+  }
+
+  // ===== FLOATING HEARTS =====
+  const emojis = ['❤️','💕','💖','💗','💓','🌸','⭐','✨'];
+  for (let i = 0; i < 18; i++) {
+    const h = document.createElement('div');
+    h.className = 'heart-bg';
+    h.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    h.style.cssText = `
+      left:${Math.random() * 100}%;
+      font-size:${1 + Math.random() * 1.5}rem;
+      animation-duration:${8 + Math.random() * 12}s;
+      animation-delay:-${Math.random() * 15}s;
+    `;
+    document.body.appendChild(h);
+  }
+
+  // ===== CONFETTI =====
+  function launchConfetti() {
+    const colors = ['#FF6B9D','#4FC3F7','#FFD54F','#CE93D8','#81C784','#FF5252','#FFB74D'];
+    for (let i = 0; i < 80; i++) {
+      const p = document.createElement('div');
+      p.className = 'confetti-piece';
+      p.style.cssText = `
+        left:${Math.random() * 100}vw;
+        background:${colors[Math.floor(Math.random() * colors.length)]};
+        width:${8 + Math.random() * 10}px;
+        height:${8 + Math.random() * 10}px;
+        border-radius:${Math.random() > 0.5 ? '50%' : '2px'};
+        animation-duration:${2.5 + Math.random() * 2}s;
+        animation-delay:${Math.random() * 0.8}s;
+      `;
+      document.body.appendChild(p);
+      setTimeout(() => p.remove(), 5000);
+    }
+  }
+
+  // ===== BALLOON POP =====
+  document.querySelectorAll('.balloon').forEach(b => {
+    b.addEventListener('click', () => {
+      b.style.animation = 'none';
+      b.style.transform = 'scale(1.4)';
+      b.style.opacity = '0';
+      b.style.transition = 'all 0.3s';
+      const spark = document.createElement('div');
+      spark.textContent = '💥';
+      spark.style.cssText = `position:fixed;font-size:2rem;pointer-events:none;z-index:999;
+        left:${b.getBoundingClientRect().left}px;top:${b.getBoundingClientRect().top}px;
+        animation:fadeUp 0.8s forwards;`;
+      document.body.appendChild(spark);
+      setTimeout(() => spark.remove(), 900);
+      setTimeout(() => { b.style.opacity = '1'; b.style.transform = ''; b.style.animation = ''; b.style.transition = ''; }, 1500);
+    });
+  });
+
+  // Auto confetti on load
+  setTimeout(launchConfetti, 1200);
+</script>
+</body>
+</html>
